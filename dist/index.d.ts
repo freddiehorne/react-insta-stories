@@ -1,9 +1,9 @@
-import React from 'react';
-import { ReactInstaStoriesProps, Story } from './interfaces';
+import React from "react";
+import { ReactInstaStoriesProps, Story } from "./interfaces";
 declare const ReactInstaStories: {
     (props: ReactInstaStoriesProps): JSX.Element;
     defaultProps: {
-        width: number;
+        width: string;
         height: number;
         defaultInterval: number;
     };
