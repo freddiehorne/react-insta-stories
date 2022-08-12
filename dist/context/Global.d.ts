@@ -1,8 +1,8 @@
-import React from 'react';
-import { GlobalCtx } from '../interfaces';
+import React from "react";
+import { GlobalCtx } from "../interfaces";
 export declare const initialContext: {
     defaultInterval: number;
-    width: number;
+    width: string;
     height: number;
 };
 declare const GlobalContext: React.Context<GlobalCtx>;
