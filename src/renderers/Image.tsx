@@ -21,7 +21,7 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
     <WithHeader story={story} globalHeader={config.header}>
       <WithSeeMore story={story} action={action}>
         <div>
-          <button>PRESS ME</button>
+          <button style={{ zIndex: 2000 }}>PRESS ME</button>
           <img style={computedStyles} src={story.url} onLoad={imageLoaded} />
           {!loaded && (
             <div
