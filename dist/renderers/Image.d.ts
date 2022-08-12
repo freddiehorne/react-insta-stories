@@ -1,4 +1,4 @@
-import { Renderer, Tester } from './../interfaces';
+import { Renderer, Tester } from "./../interfaces";
 export declare const renderer: Renderer;
 export declare const tester: Tester;
 declare const _default: {

@@ -45,7 +45,7 @@ export default function () {
 
   useEffect(() => {
     if (typeof isPaused === "boolean") {
-      setPause(isPaused);
+      setPause(true);
     }
   }, [isPaused]);
 
