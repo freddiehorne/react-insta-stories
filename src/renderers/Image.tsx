@@ -17,11 +17,25 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
     action("play");
   };
 
+  const onWaiting = () => {
+    action("pause", true);
+  };
+
+  const onPlaying = () => {
+    action("play", true);
+  };
+
   return (
     <WithHeader story={story} globalHeader={config.header}>
       <WithSeeMore story={story} action={action}>
         <div>
-          <button style={{ zIndex: 2000 }}>PRESS ME</button>
+          <div style={styles.buttonsContainer}>
+            {isPaused ? (
+              <button onClick={onPlaying}>Play</button>
+            ) : (
+              <button onClick={onWaiting}>Pause</button>
+            )}
+          </div>
           <img style={computedStyles} src={story.url} onLoad={imageLoaded} />
           {!loaded && (
             <div
@@ -59,6 +73,17 @@ const styles = {
     maxWidth: "100%",
     maxHeight: "100%",
     margin: "auto",
+  },
+  buttonsContainer: {
+    position: "absolute",
+    top: "24px",
+    right: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    zIndex: 1000,
+    height: "128px",
+    border: "solid 5px orange",
   },
 };
 
