@@ -1,22 +1,22 @@
 import React from "react";
+import CircleSVG from "../../assets/Icons/circle.svg";
+import SoundeSVG from "../../assets/Icons/sound.svg";
+import MuteSVG from "../../assets/Icons/mute.svg";
+import PlaySVG from "../../assets/Icons/play.svg";
+import PauseSVG from "../../assets/Icons/pause.svg";
 
 export const Circle = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/letsdothiscom/image/upload/v1660561501/static-assets/icons/circle.svg"
-      alt="circle"
-    />
-  );
+  return <CircleSVG />;
 };
 export const Sound = () => {
-  return <img src="../../assets/Icons/sound.svg" alt="sound" />;
+  return <SoundeSVG />;
 };
 export const Mute = () => {
-  return <img src="../../assets/Icons/mute.svg" alt="mute" />;
+  return <MuteSVG />;
 };
 export const Play = () => {
-  return <img src="../../assets/Icons/play.svg" alt="play" />;
+  return <PlaySVG />;
 };
 export const Pause = () => {
-  return <img src="../../assets/Icons/pause.svg" alt="pause" />;
+  return <PauseSVG />;
 };
