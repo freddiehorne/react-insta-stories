@@ -57,10 +57,6 @@ export const renderer: Renderer = ({
       });
   };
 
-  const mute = () => {
-    !muted ? setMuted(true) : setMuted(false);
-  };
-
   return (
     <WithHeader story={story} globalHeader={config.header}>
       <WithSeeMore story={story} action={action}>
@@ -138,8 +134,8 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute",
-    top: "40px",
-    right: "40px",
+    bottom: "40px",
+    right: "30px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",

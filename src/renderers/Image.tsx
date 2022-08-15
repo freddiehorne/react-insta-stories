@@ -82,8 +82,8 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute",
-    top: "40px",
-    right: "40px",
+    bottom: "40px",
+    right: "30px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
