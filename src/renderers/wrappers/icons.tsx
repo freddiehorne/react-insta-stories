@@ -9,34 +9,14 @@ export const Circle = () => {
   );
 };
 export const Sound = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/letsdothiscom/image/upload/v1660562246/static-assets/icons/sound.svg"
-      alt="sound"
-    />
-  );
+  return <img src="../../assets/Icons/sound.svg" alt="sound" />;
 };
 export const Mute = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/letsdothiscom/image/upload/v1660560690/static-assets/icons/mute.svg"
-      alt="mute"
-    />
-  );
+  return <img src="../../assets/Icons/mute.svg" alt="mute" />;
 };
 export const Play = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/letsdothiscom/image/upload/v1660560680/static-assets/icons/play.svg"
-      alt="play"
-    />
-  );
+  return <img src="../../assets/Icons/play.svg" alt="play" />;
 };
 export const Pause = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/letsdothiscom/image/upload/v1660560685/static-assets/icons/pause.svg"
-      alt="pause"
-    />
-  );
+  return <img src="../../assets/Icons/pause.svg" alt="pause" />;
 };

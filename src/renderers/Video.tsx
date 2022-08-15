@@ -1,6 +1,7 @@
 import * as React from "react";
 import Spinner from "../components/Spinner";
 import { Renderer, Tester } from "./../interfaces";
+import { Sound, Mute, Play, Pause } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
 
@@ -60,18 +61,20 @@ export const renderer: Renderer = ({
     !muted ? setMuted(true) : setMuted(false);
   };
 
-  const muteButtonText = muted ? "Unmute" : "Mute";
-
   return (
     <WithHeader story={story} globalHeader={config.header}>
       <WithSeeMore story={story} action={action}>
         <div style={styles.videoContainer}>
           <div style={styles.buttonsContainer}>
-            <button onClick={mute}>{muteButtonText}</button>
+            {muted ? <Sound /> : <Mute />}
             {isPaused ? (
-              <button onClick={onPlaying}>Play</button>
+              <div onClick={onPlaying}>
+                <Play />
+              </div>
             ) : (
-              <button onClick={onWaiting}>Pause</button>
+              <div onClick={onWaiting}>
+                <Pause />
+              </div>
             )}
           </div>
 
