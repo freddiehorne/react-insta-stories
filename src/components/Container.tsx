@@ -190,7 +190,6 @@ const styles = {
     flexDirection: "column",
     background: "#111",
     position: "relative",
-    borderRadius: 0,
     "@media (min-width: 768px)": {
       borderRadius: "10px",
     },
