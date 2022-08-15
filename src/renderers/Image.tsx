@@ -32,11 +32,11 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
         <div>
           <div style={styles.buttonsContainer}>
             {isPaused ? (
-              <div onClick={onPlaying}>
+              <div style={styles.buttonCircle} onClick={onPlaying}>
                 <Play />
               </div>
             ) : (
-              <div onClick={onWaiting}>
+              <div style={styles.buttonCircle} onClick={onWaiting}>
                 <Pause />
               </div>
             )}
@@ -82,14 +82,23 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute",
-    top: "24px",
-    right: "24px",
+    top: "40px",
+    right: "40px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     zIndex: 1000,
     height: "128px",
-    border: "solid 5px orange",
+  },
+  buttonCircle: {
+    width: "64px",
+    height: "64px",
+    borderRadius: "64px",
+    background: "#0F0F19",
+    opacity: 0.6,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
 

@@ -66,13 +66,21 @@ export const renderer: Renderer = ({
       <WithSeeMore story={story} action={action}>
         <div style={styles.videoContainer}>
           <div style={styles.buttonsContainer}>
-            {muted ? <Sound /> : <Mute />}
+            {muted ? (
+              <div style={styles.buttonCircle} onClick={() => setMuted(false)}>
+                <Sound />
+              </div>
+            ) : (
+              <div style={styles.buttonCircle} onClick={() => setMuted(true)}>
+                <Mute />
+              </div>
+            )}
             {isPaused ? (
-              <div onClick={onPlaying}>
+              <div style={styles.buttonCircle} onClick={onPlaying}>
                 <Play />
               </div>
             ) : (
-              <div onClick={onWaiting}>
+              <div style={styles.buttonCircle} onClick={onWaiting}>
                 <Pause />
               </div>
             )}
@@ -130,14 +138,23 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute",
-    top: "24px",
-    right: "24px",
+    top: "40px",
+    right: "40px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     zIndex: 1000,
     height: "128px",
-    border: "solid 5px orange",
+  },
+  buttonCircle: {
+    width: "64px",
+    height: "64px",
+    borderRadius: "64px",
+    background: "#0F0F19",
+    opacity: 0.6,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
 
