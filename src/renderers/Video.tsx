@@ -75,11 +75,15 @@ export const renderer: Renderer = ({
             )}
             {isPaused ? (
               <div style={styles.buttonCircle} onClick={onPlaying}>
-                <Play />
+                <div style={{ padding: "5px 0 0 5px" }}>
+                  <Play />
+                </div>
               </div>
             ) : (
               <div style={styles.buttonCircle} onClick={onWaiting}>
-                <Pause />
+                <div style={{ padding: "5px 0 0 5px" }}>
+                  <Pause />
+                </div>
               </div>
             )}
           </div>
