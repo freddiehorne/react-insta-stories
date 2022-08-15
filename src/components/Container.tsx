@@ -26,7 +26,7 @@ export default function () {
     isPaused,
     keyboardNavigation,
     preventDefault,
-    storyContainerStyles = {},
+    // storyContainerStyles = {},
   } = useContext<GlobalCtx>(GlobalContext);
   const { stories } = useContext<StoriesContextInterface>(StoriesContext);
 
@@ -140,7 +140,7 @@ export default function () {
     <div
       style={{
         ...styles.container,
-        ...storyContainerStyles,
+        // ...storyContainerStyles,
         ...{ width, height },
       }}
     >
@@ -191,7 +191,7 @@ const styles = {
     background: "#111",
     position: "relative",
     "@media (min-width: 768px)": {
-      borderRadius: "10px",
+      borderRadius: "16px",
     },
   },
   overlay: {
