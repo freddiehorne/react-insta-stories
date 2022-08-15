@@ -68,7 +68,9 @@ export const renderer: Renderer = ({
               </div>
             ) : (
               <div style={styles.buttonCircle} onClick={() => setMuted(true)}>
-                <Mute />
+                <div style={{ padding: "5px 0 0 5px" }}>
+                  <Mute />
+                </div>
               </div>
             )}
             {isPaused ? (
