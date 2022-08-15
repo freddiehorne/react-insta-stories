@@ -144,9 +144,9 @@ const styles = {
     right: "30px",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     zIndex: 1000,
-    height: "128px",
+    height: "150px",
   },
   buttonCircle: {
     width: "64px",
