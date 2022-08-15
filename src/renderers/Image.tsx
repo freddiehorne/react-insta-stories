@@ -1,6 +1,7 @@
 import * as React from "react";
 import Spinner from "../components/Spinner";
 import { Renderer, Tester } from "./../interfaces";
+import { Pause, Play } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
 
@@ -31,11 +32,16 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
         <div>
           <div style={styles.buttonsContainer}>
             {isPaused ? (
-              <button onClick={onPlaying}>Play</button>
+              <div onClick={onPlaying}>
+                <Play />
+              </div>
             ) : (
-              <button onClick={onWaiting}>Pause</button>
+              <div onClick={onWaiting}>
+                <Pause />
+              </div>
             )}
           </div>
+
           <img style={computedStyles} src={story.url} onLoad={imageLoaded} />
           {!loaded && (
             <div
