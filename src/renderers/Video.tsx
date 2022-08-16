@@ -4,7 +4,7 @@ import { Renderer, Tester } from "./../interfaces";
 import { Sound, Mute, Play, Pause } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
-import useMedia from "react-use/lib/useMedia";
+import useMedia from "./../hooks";
 
 const isMobile = useMedia("(max-width: 768px)");
 
