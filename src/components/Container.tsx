@@ -43,11 +43,11 @@ export default function () {
     }
   }, [currentIndex]);
 
-  // useEffect(() => {
-  //   if (typeof isPaused === "boolean") {
-  //     setPause(true);
-  //   }
-  // }, [isPaused]);
+  useEffect(() => {
+    if (typeof isPaused === "boolean") {
+      setPause(true);
+    }
+  }, [isPaused]);
 
   useEffect(() => {
     const isClient = typeof window !== "undefined" && window.document;
