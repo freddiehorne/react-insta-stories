@@ -9,6 +9,8 @@ import useMedia from "./../hooks";
 const isMobile = useMedia("(max-width: 768px)");
 
 export const renderer: Renderer = ({ story, action, isPaused, config }) => {
+  console.log(React);
+
   const [loaded, setLoaded] = React.useState(false);
   const { width, height, loader, storyStyles } = config;
   let computedStyles = {
