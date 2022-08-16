@@ -88,11 +88,12 @@ const styles = {
     position: "absolute",
     bottom: "40px",
     right: "30px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
     zIndex: 1000,
-    height: "128px",
+    height: "64px",
+    "@media screen and (max-width 768px)": {
+      right: "20px",
+      bottom: "20px",
+    },
   },
   buttonCircle: {
     width: "64px",

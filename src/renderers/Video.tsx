@@ -147,6 +147,10 @@ const styles = {
     justifyContent: "space-between",
     zIndex: 1000,
     height: "150px",
+    "@media screen and (max-width 768px)": {
+      right: "20px",
+      bottom: "20px",
+    },
   },
   buttonCircle: {
     width: "64px",
