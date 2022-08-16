@@ -4,9 +4,9 @@ import { Renderer, Tester } from "./../interfaces";
 import { Pause, Play } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
-import { useMediaQuery } from "../hooks/index";
+import useMedia from "react-use/lib/useMedia";
 
-const isMobile = useMediaQuery("(max-width: 768px)");
+const isMobile = useMedia("(max-width: 768px)");
 
 export const renderer: Renderer = ({ story, action, isPaused, config }) => {
   const [loaded, setLoaded] = React.useState(false);
@@ -88,7 +88,7 @@ const styles = {
     margin: "auto",
   },
   buttonsContainer: {
-    position: "absolute",
+    position: "absolute" as const,
     bottom: isMobile ? "20px" : "40px",
     right: isMobile ? "20px" : "30px",
     zIndex: 1000,
