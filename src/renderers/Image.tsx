@@ -33,11 +33,15 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
           <div style={styles.buttonsContainer}>
             {isPaused ? (
               <div style={styles.buttonCircle} onClick={onPlaying}>
-                <Play />
+                <div style={{ padding: "5px 0 0 5px", margin: "6px 0 0 6px" }}>
+                  <Play />
+                </div>
               </div>
             ) : (
               <div style={styles.buttonCircle} onClick={onWaiting}>
-                <Pause />
+                <div style={{ padding: "5px 0 0 1px", margin: "6px 0 0 4px" }}>
+                  <Pause />
+                </div>
               </div>
             )}
           </div>
