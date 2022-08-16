@@ -89,8 +89,11 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute" as const,
-    bottom: isMobile ? "20px" : "40px",
-    right: isMobile ? "20px" : "30px",
+    bottom: "40px",
+    right: "30px",
+    display: "flex",
+    flexDirection: "column" as const,
+    justifyContent: "center",
     zIndex: 1000,
     height: "64px",
   },
