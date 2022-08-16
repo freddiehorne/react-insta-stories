@@ -4,6 +4,9 @@ import { Renderer, Tester } from "./../interfaces";
 import { Pause, Play } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
+import { useMediaQuery } from "../hooks/index";
+
+const isMobile = useMediaQuery("(max-width: 768px)");
 
 export const renderer: Renderer = ({ story, action, isPaused, config }) => {
   const [loaded, setLoaded] = React.useState(false);
@@ -86,14 +89,10 @@ const styles = {
   },
   buttonsContainer: {
     position: "absolute",
-    bottom: "40px",
-    right: "30px",
+    bottom: isMobile ? "20px" : "40px",
+    right: isMobile ? "20px" : "30px",
     zIndex: 1000,
     height: "64px",
-    "@media screen and (max-width 768px)": {
-      right: "20px",
-      bottom: "20px",
-    },
   },
   buttonCircle: {
     width: "64px",
