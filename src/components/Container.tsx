@@ -120,17 +120,16 @@ export default function () {
     }, 200);
   };
 
-  const mouseUp = (type: string) => (
-    e: React.MouseEvent | React.TouchEvent
-  ) => {
-    e.preventDefault();
-    mousedownId.current && clearTimeout(mousedownId.current);
-    if (pause) {
-      toggleState("play");
-    } else {
-      type === "next" ? next() : previous();
-    }
-  };
+  const mouseUp =
+    (type: string) => (e: React.MouseEvent | React.TouchEvent) => {
+      e.preventDefault();
+      mousedownId.current && clearTimeout(mousedownId.current);
+      if (pause) {
+        toggleState("play");
+      } else {
+        type === "next" ? next() : previous();
+      }
+    };
 
   const getVideoDuration = (duration: number) => {
     setVideoDuration(duration * 1000);
@@ -187,12 +186,12 @@ export default function () {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column" as const,
     background: "#111",
-    position: "relative",
+    position: "relative" as const,
   },
   overlay: {
-    position: "absolute",
+    position: "absolute" as const,
     height: "inherit",
     width: "inherit",
     display: "flex",

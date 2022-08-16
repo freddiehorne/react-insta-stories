@@ -5,6 +5,10 @@ import { Sound, Mute, Play, Pause } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
 
+import useMediaQuery from "../hooks";
+
+const isMobile = useMediaQuery("(max-width: 768px)");
+
 export const renderer: Renderer = ({
   story,
   action,
@@ -139,11 +143,11 @@ const styles = {
     justifyContent: "center",
   },
   buttonsContainer: {
-    position: "absolute",
-    bottom: "40px",
-    right: "30px",
+    position: "absolute" as const,
+    bottom: isMobile ? "20px" : "40px",
+    right: isMobile ? "20px" : "30px",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column" as const,
     justifyContent: "space-between",
     zIndex: 1000,
     height: "150px",
