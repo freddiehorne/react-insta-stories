@@ -5,7 +5,7 @@ import { Pause, Play } from "./wrappers/icons";
 import WithHeader from "./wrappers/withHeader";
 import WithSeeMore from "./wrappers/withSeeMore";
 
-import useMediaQuery from "../hooks";
+import { useMediaQuery } from "usehooks-ts";
 
 const isMobile = useMediaQuery("(max-width: 768px)");
 
