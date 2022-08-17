@@ -9,7 +9,11 @@ import {
   StoriesContext as StoriesContextInterface,
 } from "./../interfaces";
 
+import useMedia from "../hooks";
+
 export default function () {
+  const isMobile = useMedia("(max-width: 768px)");
+
   const [currentId, setCurrentId] = useState<number>(0);
   const [pause, setPause] = useState<boolean>(false);
   const [bufferAction, setBufferAction] = useState<boolean>(false);
@@ -120,16 +124,17 @@ export default function () {
     }, 200);
   };
 
-  const mouseUp =
-    (type: string) => (e: React.MouseEvent | React.TouchEvent) => {
-      e.preventDefault();
-      mousedownId.current && clearTimeout(mousedownId.current);
-      if (pause) {
-        toggleState("play");
-      } else {
-        type === "next" ? next() : previous();
-      }
-    };
+  const mouseUp = (type: string) => (
+    e: React.MouseEvent | React.TouchEvent
+  ) => {
+    e.preventDefault();
+    mousedownId.current && clearTimeout(mousedownId.current);
+    if (pause) {
+      toggleState("play");
+    } else {
+      type === "next" ? next() : previous();
+    }
+  };
 
   const getVideoDuration = (duration: number) => {
     setVideoDuration(duration * 1000);
@@ -138,8 +143,11 @@ export default function () {
   return (
     <div
       style={{
-        ...styles.container,
-        // ...storyContainerStyles,
+        display: "flex",
+        flexDirection: "column" as const,
+        background: "#111",
+        position: "relative" as const,
+        borderRadius: isMobile ? "0px" : "16px",
         ...{ width, height },
       }}
     >
@@ -184,12 +192,6 @@ export default function () {
 }
 
 const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column" as const,
-    background: "#111",
-    position: "relative" as const,
-  },
   overlay: {
     position: "absolute" as const,
     height: "inherit",
