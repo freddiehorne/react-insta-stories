@@ -77,17 +77,6 @@ export const renderer: Renderer = ({
               height: "150px",
             }}
           >
-            {muted ? (
-              <div style={styles.buttonCircle} onClick={() => setMuted(false)}>
-                <Sound />
-              </div>
-            ) : (
-              <div style={styles.buttonCircle} onClick={() => setMuted(true)}>
-                <div style={{ padding: "5px 0 0 5px", marginTop: "9px" }}>
-                  <Mute />
-                </div>
-              </div>
-            )}
             {isPaused ? (
               <div style={styles.buttonCircle} onClick={onPlaying}>
                 <div style={{ padding: "5px 0 0 5px", margin: "6px 0 0 6px" }}>
@@ -98,6 +87,17 @@ export const renderer: Renderer = ({
               <div style={styles.buttonCircle} onClick={onWaiting}>
                 <div style={{ padding: "5px 0 0 1px", margin: "6px 0 0 4px" }}>
                   <Pause />
+                </div>
+              </div>
+            )}
+            {muted ? (
+              <div style={styles.buttonCircle} onClick={() => setMuted(false)}>
+                <Sound />
+              </div>
+            ) : (
+              <div style={styles.buttonCircle} onClick={() => setMuted(true)}>
+                <div style={{ padding: "5px 0 0 5px", marginTop: "9px" }}>
+                  <Mute />
                 </div>
               </div>
             )}
