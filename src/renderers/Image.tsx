@@ -37,7 +37,7 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
           <div
             style={{
               position: "absolute" as const,
-              bottom: isMobile ? "20px" : "40px",
+              bottom: isMobile ? "30px" : "40px",
               right: isMobile ? "20px" : "30px",
               display: "flex",
               flexDirection: "column" as const,
